@@ -2,12 +2,12 @@
 
 TERRAFORM COMMANDS:
 
-Terraform init
-Terraform fmt
-Terraform validate
-Terraform plan
-Terraform apply
-Terrafom apply/destroy -auto-approve
+terraform init
+terraform fmt
+terraform validate
+terraform plan
+terraform apply
+terrafom apply/destroy -auto-approve
 terraform apply/destroy -target=<resource_name>.<local_name>
 terraform refresh
 ------
@@ -17,6 +17,8 @@ terraform import ( see terraform resource documentation )
 terraform state list - what is managed by the state
 terraform state mv
 
+terraform taint aws_subnet.private_subnet_1
+terraform untaint aws_subnet.private_subnet_1
 --------
 remote state lock sequence:
 1. Create manually a bucket to host your state.
@@ -30,6 +32,6 @@ remote state lock sequence:
 3. Create dynamodb table
 4. add the table to the backend config:
    dynamodb_table = "terraform-lock"
-5. run 'terraform init -reconfigure
+4. run 'terraform init -reconfigure
 
 ----------------------
